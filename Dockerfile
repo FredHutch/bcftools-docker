@@ -18,6 +18,10 @@ WORKDIR /bcftools-1.9
 
 RUN autoheader && autoconf && ./configure && make && make install
 
+WORKDIR /htslib-1.9
+
+RUN autoheader && autoconf && ./configure && make && make install
+
 WORKDIR /
 
 RUN rm -rf 1.9.tar.gz bcftools-1.9 htslib-1.9.tar.bz2 htslib-1.9
